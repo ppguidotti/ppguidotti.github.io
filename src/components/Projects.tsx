@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { LuGithub, LuLayers } from 'react-icons/lu';
-import { Github } from 'lucide-react';
 
 interface ShowcaseProject {
   github: string | undefined;

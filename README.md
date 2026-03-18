@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+# Sito Personale
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Questo è il repository per il mio sito personale, sviluppato con React, TypeScript e Vite.
 
-Currently, two official plugins are available:
+## Descrizione
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Questo progetto è un sito personale moderno, responsivo e performante, progettato per mostrare i miei lavori e le mie competenze. È costruito con un'architettura modulare e facilmente manutenibile.
 
-## Expanding the ESLint configuration
+## Tecnologie Utilizzate
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+*   **React**: Libreria JavaScript per la creazione di interfacce utente.
+*   **TypeScript**: Superset di JavaScript che aggiunge la tipizzazione statica.
+*   **Vite**: Strumento di build estremamente veloce per lo sviluppo web moderno.
+*   **Tailwind CSS**: Framework CSS utility-first per un design rapido e personalizzato.
+*   **Framer Motion**: Libreria per animazioni complesse e gesti.
+*   **Lucide React**: Una libreria di icone SVG.
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisiti
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Assicurati di avere installato [Node.js](https://nodejs.org/) (versione 18 o successiva).
+
+## Installazione
+
+1.  Clona il repository:
+    ```bash
+    git clone https://github.com/tuo-username/tuo-repository.git
+    ```
+2.  Naviga nella directory del progetto:
+    ```bash
+    cd nome-repository
+    ```
+3.  Installa le dipendenze:
+    ```bash
+    npm install
+    ```
+
+## Utilizzo
+
+### Avviare il server di sviluppo
+
+Per avviare il server di sviluppo con hot-reloading:
+
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Il sito sarà accessibile all'indirizzo `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Build per la produzione
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Per creare una build ottimizzata per la produzione:
+
+```bash
+npm run build
+```
+
+I file verranno generati nella directory `dist/`.
+
+### Linting
+
+Per eseguire il linter e controllare la qualità del codice:
+
+```bash
+npm run lint
+```
+
+### Anteprima della build di produzione
+
+Per visualizzare un'anteprima della build di produzione:
+
+```bash
+npm run preview
 ```

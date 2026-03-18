@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-dark: #0a0a12;
+  --color-bg-light: #faf9f6;
+  --color-text-dark: #e8e6e3;
+  --color-text-light: #1a1a2e;
+  --color-accent: #c8b6ff;
+  --color-accent-hover: #b19cff;
+  --color-border-dark: #1e1e2e;
+  --color-border-light: #e5e5e5;
+  --color-card-dark: #13131f;
+  --color-card-light: #ffffff;
+
+  --bg: var(--color-bg-light);
+  --text: var(--color-text-light);
+  --border: var(--color-border-light);
+  --card: var(--color-card-light);
+  --accent: #7c3aed;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+[data-theme="dark"] {
+  --bg: var(--color-bg-dark);
+  --text: var(--color-text-dark);
+  --border: var(--color-border-dark);
+  --card: var(--color-card-dark);
+  --accent: var(--color-accent);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+@media (pointer: coarse) {
+  .custom-cursor, .custom-cursor-dot {
+    display: none;
+  }
+}
+
+/* Glitch Effect */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text:hover::before,
+.glitch-text.glitch-effect::before,
+.glitch-text:hover::after,
+.glitch-text.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+}
+
+.glitch-text:hover::before,
+.glitch-text.glitch-effect::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 1s linear alternate-reverse;
+}
+
+.glitch-text:hover::after,
+.glitch-text.glitch-effect::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  100% { clip: rect(81px, 9999px, 11px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  100% { clip: rect(15px, 9999px, 86px, 0); }
+}
+
+/* Dot Grid Pattern */
+.dot-grid {
+  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+}

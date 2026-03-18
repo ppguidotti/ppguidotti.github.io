@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;display=swap');
+      .logo-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 65px; /* Grandezza enorme rispetto al box */
+        font-weight: 700;
+        letter-spacing: -0.08em;
+        fill: #1a1a2e; /* Cambia in #ffffff se vuoi la favicon chiara */
+      }
+      .accent {
+        fill: #7c3aed;
+      }
+    </style>
+  </defs>
+  <text x="50%" y="54%" class="logo-text" text-anchor="middle" dominant-baseline="middle">PG<tspan class="accent">.</tspan></text>
+</svg>

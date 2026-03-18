@@ -23,7 +23,7 @@ Assicurati di avere installato [Node.js](https://nodejs.org/) (versione 18 o suc
 
 1.  Clona il repository:
     ```bash
-    git clone https://github.com/tuo-username/tuo-repository.git
+    git clone https://github.com/ppguidotti/tuo-repository.git
     ```
 2.  Naviga nella directory del progetto:
     ```bash
